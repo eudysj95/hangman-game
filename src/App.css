@@ -28,18 +28,21 @@
   .ocultas {
     height: 50%;
   }
-  .ahorcado{
-    height: 200px;
-  }
 }
 
-.ocultas, .ahorcado{
-  border: 1px solid black;
+.ahorcado{
+  margin-top: 10px;
+  height: 200px;
+  display: block;
+}
+.ahorcado img{
+  height: 25px;
+  display: block;
+  margin: 0 auto;
 }
 
 .ocultas{
-  margin-top: 3%;
-  margin-bottom: 10%;
+  height: 100px;
   padding: 10px;
 }
 

@@ -6,6 +6,7 @@ import { Teclado } from '../componentes/Teclado'
 export const Main = () => {
 
   const [ palabraState, setPalabraState ] = useState([]);
+  const [ ahorcadoState, setAhorcadoState] = useState(0);
 
 
 
@@ -17,11 +18,11 @@ export const Main = () => {
 
             <Ocultas palabraState={palabraState} setPalabraState={setPalabraState} />
 
-            <Ahorcado />
+            <Ahorcado ahorcadoState={ahorcadoState} />
 
         </div>
 
-        <Teclado palabraState={palabraState} setPalabraState={setPalabraState} />
+        <Teclado palabraState={palabraState} ahorcadoState={ahorcadoState} setAhorcadoState={setAhorcadoState} />
 
     </>
   )

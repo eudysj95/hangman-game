@@ -1,9 +1,8 @@
 /* eslint-disable no-unused-vars */
 import React from 'react'
-import { Ocultas } from './Ocultas';
 import { useNavigate } from 'react-router-dom';
 
-export const Teclado = ({palabraState, setPalabraState}) => {
+export const Teclado = ({palabraState, ahorcadoState, setAhorcadoState }) => {
 
   const navegar = useNavigate()
 
@@ -19,25 +18,20 @@ export const Teclado = ({palabraState, setPalabraState}) => {
 
     if(resultado){
 
-      for(let i = 0; i < palabraState.length; i++ ){
-        if(palabraState[i].toLowerCase() === letra){
-          contador++
-        }
-      }
-      
-
       let input = document.getElementsByName(letra);
-
+      
       for(let i = 0; i < input.length; i++){
-        input[i].classList.add('revelada')
-        input[i].classList.remove('oculta')
+        input[i].classList.add('revelada');
+        input[i].classList.remove('oculta');
+        contador++;
       }
       
-      if(contador >1){
-        completado = completado + contador
-        contador = 0
+      if(contador > 1){
+        completado = completado + contador;
+        contador = 0;
       }else{
-        completado++
+        completado++;
+        contador = 0;
       }
 
       if(completado === longitud){
@@ -46,7 +40,9 @@ export const Teclado = ({palabraState, setPalabraState}) => {
         
       }
     }else{
-      alert('No se encuentra')
+
+      setAhorcadoState(ahorcadoState + 1);
+
     }
 
 
