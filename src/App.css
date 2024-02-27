@@ -44,6 +44,17 @@
 }
 
 .oculta{
+  color: aliceblue;
+  text-align: center;
+  width: 7%;
+  height: 30px;
+  font-size: 20px;
+  margin: 0.5% 0.5%;
+  border: none;
+  border-radius: 20%;
+  background-color: aliceblue;
+}
+.revelada{
   color: blue;
   text-align: center;
   width: 7%;
@@ -70,6 +81,7 @@
 }
 
 .botonPlay{
+  margin-top: 10vh;
   font-size: 150%;
   height: 50px;
   width: 100px;

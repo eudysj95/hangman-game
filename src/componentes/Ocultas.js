@@ -1,11 +1,9 @@
 /* eslint-disable no-unused-vars */
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import palabras from '../palabras';
 
-export const Ocultas = () => {
+export const Ocultas = ({palabraState, setPalabraState}) => {
   
-
-  const [ palabraState, setPalabraState ] = useState([]);
 
   useEffect(() =>{
 
@@ -15,6 +13,7 @@ export const Ocultas = () => {
   }, []);
 
   
+  
   const rellenar = () => {
     let objetoPalabras = palabras;
     let aleatorio = parseInt(Math.random()*10);
@@ -23,11 +22,12 @@ export const Ocultas = () => {
 
     for(let i = 0; i < palabra.length; i++){
       arrayPalabra.push(palabra.slice(i, i+1).toUpperCase());
-      console.log(arrayPalabra)
+      console.log(arrayPalabra);
     }
     /* let letra = palabra.slice(0, 1).toUpperCase(); */
     
     setPalabraState(arrayPalabra);
+    
   }
   
 
@@ -37,7 +37,7 @@ export const Ocultas = () => {
           
           {palabraState.map(letra =>{
             return(
-              <input type='text' readOnly key={Math.random()} className='oculta' value={letra} />
+              <input type='text' readOnly key={Math.random()} className='oculta' name={letra} value={letra} />
             );
           })}
       {/* <input type='text' className='oculta' value={letra} />  */} 
